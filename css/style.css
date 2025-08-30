@@ -1,0 +1,326 @@
+/* Importa fonte do Google Fonts e define variáveis globais para cores, fontes e bordas */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+:root {
+  /* Cores principais do modo escuro */
+  --cor-fundo: #181a20;
+  --cor-elemento: #23262e;
+  --cor-texto: #f1f3f6;
+  --cor-texto-secundario: #b0b3bb;
+  --cor-destaque: #0099ff;
+  --cor-destaque-hover: #0056b3;
+  --fonte-principal: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --raio-borda: 6px;
+  --borda-sutil: 1px solid #23262e;
+}
+
+/* Reset de margens, paddings e box-sizing para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Suaviza rolagem */
+}
+
+body {
+  /* Aplica fonte, cor de fundo e configura layout principal */
+  font-family: var(--fonte-principal);
+  background: linear-gradient(120deg, #181a20 0%, #23262e 100%);
+  color: var(--cor-texto);
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container centraliza e limita largura do conteúdo */
+.container {
+  width: 92%;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+main {
+  flex: 1;
+  padding: 4rem 0;
+  animation: fadeInMain 0.8s;
+}
+
+@keyframes fadeInMain {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Seção principal do conteúdo */
+.content-section {
+  padding: 48px 40px;
+  background-color: var(--cor-elemento);
+  border: var(--borda-sutil);
+  border-radius: var(--raio-borda);
+  box-shadow: 0 4px 24px rgba(0, 153, 255, 0.1),
+    0 1.5px 6px rgba(33, 37, 41, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cabeçalho fixo e estilizado */
+header {
+  background: linear-gradient(90deg, #23262e 0%, #181a20 100%);
+  box-shadow: 0 2px 12px rgba(0, 123, 255, 0.08);
+  padding: 1.5rem 0 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: var(--borda-sutil);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cor-destaque);
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0, 123, 255, 0.08);
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: var(--cor-destaque-hover);
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header ul li a {
+  color: var(--cor-texto-secundario);
+  text-decoration: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: var(--raio-borda);
+  transition: color 0.3s, background 0.3s;
+  box-shadow: 0 1px 4px rgba(0, 123, 255, 0.04);
+}
+
+header ul li a:hover {
+  color: var(--cor-texto);
+}
+
+header ul li a.active {
+  color: var(--cor-destaque);
+  background: linear-gradient(90deg, #e3f0ff 0%, #f8f9fa 100%);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.08);
+}
+
+/* Títulos e textos principais */
+h1,
+h2 {
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(0, 123, 255, 0.04);
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+h2 {
+  font-size: 2rem;
+  border-top: var(--borda-sutil);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.08rem;
+  color: var(--cor-texto-secundario);
+}
+
+/* Layout da seção Sobre Mim */
+.grid-sobre-mim {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.profile-pic {
+  max-width: 200px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 5px;
+  border: 4px solid var(--cor-destaque);
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.1);
+  background: #fff;
+  object-fit: cover;
+}
+
+/* Cards de formação e portfólio */
+.card {
+  background: linear-gradient(120deg, #23262e 60%, #181a20 100%);
+  padding: 1.5rem 1.2rem;
+  border-bottom: var(--borda-sutil);
+  margin-bottom: 1rem;
+  border-radius: var(--raio-borda);
+  box-shadow: 0 2px 8px rgba(0, 153, 255, 0.1);
+  transition: box-shadow 0.3s;
+}
+.card:hover {
+  box-shadow: 0 6px 24px rgba(0, 123, 255, 0.12);
+}
+.card:last-child {
+  border-bottom: none;
+}
+
+.card .period {
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 0.5rem;
+}
+
+/* Grid de portfólio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.portfolio-item {
+  transition: background 0.3s;
+  border-radius: var(--raio-borda);
+  padding: 0.5rem 0.8rem;
+}
+
+.portfolio-item:hover {
+  background: linear-gradient(90deg, #23262e 0%, #181a20 100%);
+}
+
+.portfolio-item a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.portfolio-item a:hover {
+  text-decoration: underline;
+  color: var(--cor-destaque-hover);
+}
+
+/* Formulário de contato */
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto);
+  background-color: var(--cor-elemento);
+  border: var(--borda-sutil);
+  border-radius: var(--raio-borda);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--cor-destaque);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+form button {
+  padding: 12px 28px;
+  border: none;
+  background: linear-gradient(90deg, var(--cor-destaque), #23262e);
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  border-radius: var(--raio-borda);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+form button:hover {
+  background: linear-gradient(90deg, var(--cor-destaque-hover), #181a20);
+  box-shadow: 0 6px 24px rgba(0, 123, 255, 0.18);
+}
+
+/* Rodapé do site */
+footer {
+  text-align: center;
+  padding: 2.5rem 0 2rem 0;
+  margin-top: auto;
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+  background: linear-gradient(90deg, #23262e 0%, #181a20 100%);
+  box-shadow: 0 -2px 12px rgba(0, 153, 255, 0.1);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .grid-sobre-mim {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .profile-pic {
+    margin: 0 auto 1.5rem auto;
+    max-width: 140px;
+    width: 140px;
+    height: 140px;
+  }
+  .content-section {
+    padding: 28px 10px;
+  }
+}

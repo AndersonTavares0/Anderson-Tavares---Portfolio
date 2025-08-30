@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- Página de contato do site -->
+<html lang="pt-BR">
+
+<head>
+  <!-- Metadados e título -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anderson Tavares - Portfólio</title>
+  <!-- Importa o CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Cabeçalho e navegação -->
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">Anderson Tavares</a>
+      <ul>
+        <li><a href="index.html">Sobre Mim</a></li>
+        <li><a href="formacao.html">Formação</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Seção de contato -->
+    <section class="container content-section">
+      <h1>Entre em Contato</h1>
+      <p>Se você tiver alguma pergunta ou proposta, sinta-se à vontade para me enviar uma mensagem através do formulário abaixo.</p>
+
+      <!-- Formulário de contato -->
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" rows="6" placeholder="Deixe sua mensagem aqui" required></textarea>
+        </div>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 - Anderson Tavares. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
