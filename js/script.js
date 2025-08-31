@@ -1,3 +1,4 @@
+ // Aguarda o carregamento completo do DOM antes de executar o script
 document.addEventListener("DOMContentLoaded", function () {
   // Seleciona o formulário de contato pelo ID
   const contactForm = document.getElementById("contact-form");
