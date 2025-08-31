@@ -1,11 +1,3 @@
-// Aguarda o carregamento completo do DOM antes de executar o script
-// Executa apenas quando a página está pronta
-
-// Adiciona funcionalidade ao formulário de contato
-// Seleciona o formulário pelo ID
-// Se existir, adiciona evento de envio
-// Previne o envio padrão, pega os valores dos campos, mostra alerta e limpa o formulário
-
 document.addEventListener("DOMContentLoaded", function () {
   // Seleciona o formulário de contato pelo ID
   const contactForm = document.getElementById("contact-form");
@@ -17,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Previne o comportamento padrão do formulário, que é recarregar a página
       event.preventDefault();
 
-      // Pega os valores dos campos (opcional, mas bom para futuras validações)
+      // Pega os valores dos campos 
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const message = document.getElementById("message").value;
