@@ -1,3 +1,14 @@
+/* Cor personalizada para o link do GitHub no rodapé */
+.github-link {
+  color: #36d6ae; /* Altere para a cor desejada */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  color: #0099ff; /* Cor ao passar o mouse */
+}
 /* Importa fonte do Google Fonts e define variáveis globais para cores, fontes e bordas */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
