@@ -1,19 +1,6 @@
-/* Cor personalizada para o link do GitHub no rodapé */
-.github-link {
-  color: #36d6ae; /* Altere para a cor desejada */
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.github-link:hover {
-  color: #0099ff; /* Cor ao passar o mouse */
-}
-/* Importa fonte do Google Fonts e define variáveis globais para cores, fontes e bordas */
+/* Importação de fonte e variáveis globais */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
-
 :root {
-  /* Cores principais do modo escuro */
   --cor-fundo: #181a20;
   --cor-elemento: #23262e;
   --cor-texto: #f1f3f6;
@@ -26,19 +13,16 @@
   --borda-sutil: 1px solid #23262e;
 }
 
-/* Reset de margens, paddings e box-sizing para todos os elementos */
+/* Reset e base do layout */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
-  scroll-behavior: smooth; /* Suaviza rolagem */
+  scroll-behavior: smooth;
 }
-
 body {
-  /* Aplica fonte, cor de fundo e configura layout principal */
   font-family: var(--fonte-principal);
   background: linear-gradient(120deg, #181a20 0%, #23262e 100%);
   color: var(--cor-texto);
@@ -48,20 +32,16 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
-
-/* Container centraliza e limita largura do conteúdo */
 .container {
   width: 92%;
   max-width: 950px;
   margin: 0 auto;
 }
-
 main {
   flex: 1;
   padding: 4rem 0;
   animation: fadeInMain 0.8s;
 }
-
 @keyframes fadeInMain {
   from {
     opacity: 0;
@@ -73,29 +53,7 @@ main {
   }
 }
 
-/* Seção principal do conteúdo */
-.content-section {
-  padding: 48px 40px;
-  background-color: var(--cor-elemento);
-  border: var(--borda-sutil);
-  border-radius: var(--raio-borda);
-  box-shadow: 0 4px 24px rgba(0, 153, 255, 0.1),
-    0 1.5px 6px rgba(33, 37, 41, 0.1);
-  animation: fadeIn 0.6s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Cabeçalho fixo e estilizado */
+/* Cabeçalho e navegação */
 header {
   background: linear-gradient(90deg, #23262e 0%, #181a20 100%);
   box-shadow: 0 2px 12px rgba(0, 123, 255, 0.08);
@@ -105,13 +63,11 @@ header {
   z-index: 1000;
   border-bottom: var(--borda-sutil);
 }
-
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .logo {
   font-size: 2rem;
   font-weight: 700;
@@ -121,17 +77,14 @@ header nav {
   text-shadow: 0 2px 8px rgba(0, 123, 255, 0.08);
   transition: color 0.3s;
 }
-
 .logo:hover {
   color: var(--cor-destaque-hover);
 }
-
 header ul {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
-
 header ul li a {
   color: var(--cor-texto-secundario);
   text-decoration: none;
@@ -141,11 +94,9 @@ header ul li a {
   transition: color 0.3s, background 0.3s;
   box-shadow: 0 1px 4px rgba(0, 123, 255, 0.04);
 }
-
 header ul li a:hover {
   color: var(--cor-texto);
 }
-
 header ul li a.active {
   color: var(--cor-destaque);
   background: linear-gradient(90deg, #e3f0ff 0%, #f8f9fa 100%);
@@ -160,7 +111,6 @@ h2 {
   margin-bottom: 2rem;
   text-shadow: 0 2px 8px rgba(0, 123, 255, 0.04);
 }
-
 h1 {
   font-size: 2.8rem;
   line-height: 1.2;
@@ -178,14 +128,80 @@ p {
   color: var(--cor-texto-secundario);
 }
 
-/* Layout da seção Sobre Mim */
+/* Seções, cards e portfólio */
+.content-section,
+.card,
+.portfolio-item,
+form input,
+form textarea {
+  border-radius: var(--raio-borda);
+  transition: box-shadow 0.3s, background 0.3s, border-color 0.3s;
+}
+.content-section {
+  padding: 48px 40px;
+  background-color: var(--cor-elemento);
+  border: var(--borda-sutil);
+  box-shadow: 0 4px 24px rgba(0, 153, 255, 0.1),
+    0 1.5px 6px rgba(33, 37, 41, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card {
+  background: linear-gradient(120deg, #23262e 60%, #181a20 100%);
+  padding: 1.5rem 1.2rem;
+  border-bottom: var(--borda-sutil);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 153, 255, 0.1);
+}
+.card:hover {
+  box-shadow: 0 6px 24px rgba(0, 123, 255, 0.12);
+}
+.card:last-child {
+  border-bottom: none;
+}
+.card .period {
+  font-size: 0.95rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 0.5rem;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.portfolio-item {
+  padding: 0.5rem 0.8rem;
+}
+.portfolio-item:hover {
+  background: linear-gradient(90deg, #23262e 0%, #181a20 100%);
+}
+.portfolio-item a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.portfolio-item a:hover {
+  text-decoration: underline;
+  color: var(--cor-destaque-hover);
+}
+
+/* Sobre mim */
 .grid-sobre-mim {
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 3rem;
   align-items: flex-start;
 }
-
 .profile-pic {
   max-width: 200px;
   width: 200px;
@@ -198,58 +214,6 @@ p {
   object-fit: cover;
 }
 
-/* Cards de formação e portfólio */
-.card {
-  background: linear-gradient(120deg, #23262e 60%, #181a20 100%);
-  padding: 1.5rem 1.2rem;
-  border-bottom: var(--borda-sutil);
-  margin-bottom: 1rem;
-  border-radius: var(--raio-borda);
-  box-shadow: 0 2px 8px rgba(0, 153, 255, 0.1);
-  transition: box-shadow 0.3s;
-}
-.card:hover {
-  box-shadow: 0 6px 24px rgba(0, 123, 255, 0.12);
-}
-.card:last-child {
-  border-bottom: none;
-}
-
-.card .period {
-  font-style: normal;
-  font-size: 0.95rem;
-  color: var(--cor-texto-secundario);
-  margin-bottom: 0.5rem;
-}
-
-/* Grid de portfólio */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-
-.portfolio-item {
-  transition: background 0.3s;
-  border-radius: var(--raio-borda);
-  padding: 0.5rem 0.8rem;
-}
-
-.portfolio-item:hover {
-  background: linear-gradient(90deg, #23262e 0%, #181a20 100%);
-}
-
-.portfolio-item a {
-  color: var(--cor-destaque);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-.portfolio-item a:hover {
-  text-decoration: underline;
-  color: var(--cor-destaque-hover);
-}
-
 /* Formulário de contato */
 form label {
   display: block;
@@ -257,7 +221,6 @@ form label {
   font-weight: 600;
   font-size: 0.9rem;
 }
-
 form input,
 form textarea {
   width: 100%;
@@ -267,22 +230,18 @@ form textarea {
   color: var(--cor-texto);
   background-color: var(--cor-elemento);
   border: var(--borda-sutil);
-  border-radius: var(--raio-borda);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 form input:focus,
 form textarea:focus {
   outline: none;
   border-color: var(--cor-destaque);
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
-
 form button {
   padding: 12px 28px;
   border: none;
   background: linear-gradient(90deg, var(--cor-destaque), #23262e);
-  color: #ffffff;
+  color: #fff;
   font-size: 1.08rem;
   font-weight: 700;
   border-radius: var(--raio-borda);
@@ -295,7 +254,7 @@ form button:hover {
   box-shadow: 0 6px 24px rgba(0, 123, 255, 0.18);
 }
 
-/* Rodapé do site */
+/* Rodapé */
 footer {
   text-align: center;
   padding: 2.5rem 0 2rem 0;
@@ -306,7 +265,7 @@ footer {
   box-shadow: 0 -2px 12px rgba(0, 153, 255, 0.1);
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 768px) {
   h1 {
     font-size: 2.2rem;
@@ -314,12 +273,10 @@ footer {
   h2 {
     font-size: 1.5rem;
   }
-
   header nav {
     flex-direction: column;
     gap: 1.5rem;
   }
-
   .grid-sobre-mim {
     grid-template-columns: 1fr;
     text-align: center;
